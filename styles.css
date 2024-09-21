@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #001f3f, #003366); /* Navy blue background with fade effect */
+}
+
+.container {
+    text-align: center;
+    background-color: #fff; /* White background for readability */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 800px;
+    margin: 0 auto;
+}
+
+h1.movie-recommendations {
+    font-size: 48px; /* Large font size for prominence */
+    color: #e74c3c; /* Bright color for the title */
+    margin-bottom: 30px; /* Space below the title */
+    position: relative; /* Required for the underline positioning */
+    display: inline-block; /* Ensure underline effect applies correctly */
+}
+
+h1.movie-recommendations::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px; /* Position the underline just below the text */
+    height: 5px; /* Thickness of the underline */
+    width: 100%;
+    background-color: #e74c3c; /* Same bright color as the text */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+h1.movie-recommendations:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: #f39c12; /* Change underline color on hover */
+}
+
+.movie-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #3498db; /* Consistent border color */
+}
+
+.movie-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.movie-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.movie-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.recommendation {
+    margin-top: 30px;
+    display: none;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.genre-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.genre-section h2 {
+    position: relative;
+    font-size: 36px; /* Increased font size */
+    color: #e74c3c; /* Bright red color for the text */
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.genre-section h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position the underline directly below the text */
+    height: 4px; /* Thickness of the underline */
+    width: 100%;
+    background-color: #e74c3c; /* Same bright color as the text */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.genre-section h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    background-color: #f39c12; /* Change underline color on hover */
+}
+
+.genre-section a {
+    color: inherit; /* Use the color of the h2 text */
+    text-decoration: none; /* Remove default underline on links */
+}
+
+.genre-section a:hover {
+    color: #f39c12; /* Optional: Change color on hover for better interactivity */
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #3498db;
+    text-decoration: none;
+    border: 1px solid #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .dropbtn, .back-link {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .movie-box {
+        width: 100%;
+        max-width: 300px;
+    }
+}

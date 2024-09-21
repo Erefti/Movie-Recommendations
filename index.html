@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="movie-recommendations">Movie Recommendations</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Select Genre</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="showRecommendations('action')">Action</a>
+                <a href="#" onclick="showRecommendations('comedy')">Comedy</a>
+                <a href="#" onclick="showRecommendations('drama')">Drama</a>
+            </div>
+        </div>
+        <div id="recommendations" class="recommendation">
+            <!-- Recommendations will be displayed here -->
+        </div>
+        <!-- Other content such as genre sections -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
